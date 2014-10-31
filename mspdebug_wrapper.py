@@ -27,7 +27,7 @@ def parse_args ():
     parser.add_argument('-s', '--simulator', action='store_true',
             help='use simulator')
     parser.add_argument('-H', '--host-ssh', type=str,
-            default='host to connect to via ssh')
+            help='host to connect to via ssh')
     parser.add_argument('-m', '--mspdebug', type=str, default='mspdebug',
             help='how to invoke mspdebug (default \'mspdebug\')')
     parser.add_argument('-c', '--command', type=str, default='tilib',
