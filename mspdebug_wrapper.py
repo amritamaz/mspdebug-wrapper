@@ -63,6 +63,7 @@ def write_dotfile (args):
         logger.debug('Calling {}'.format(' '.join(scpcmd)))
         rc = subprocess.call(scpcmd)
         return (rc == 0)
+    else: return True #quickfix
 
 def run_mspdebug (args):
     outputfile = args.outfile and args.outfile or sys.stderr
@@ -156,7 +157,6 @@ def remove_dotfile (args):
 
 if __name__ == '__main__':
     args = parse_args()
-
     logLevel = (args.debug and logging.DEBUG or logging.INFO)
     logHandler = logging.StreamHandler()
     logFormat = '%(levelname)s: %(message)s'
